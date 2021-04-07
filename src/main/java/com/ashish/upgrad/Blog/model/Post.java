@@ -1,23 +1,35 @@
 package com.ashish.upgrad.Blog.model;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
-
+@Entity
 public class Post
 {
     @Id
-
-    private String id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
     private String title;
     private String body;
     private Date date;
+    public Post() {
+        super();
+    }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Post(Integer id, String title, String body, Date date) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+        this.date = date;
     }
 
     public String getTitle() {

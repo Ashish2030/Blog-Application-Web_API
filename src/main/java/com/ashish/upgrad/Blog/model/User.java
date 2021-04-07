@@ -1,25 +1,23 @@
 package com.ashish.upgrad.Blog.model;
-
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
+@Entity
 public class User
 {
     @Id
     private Integer id;
-    private String username;
+    private String userName;
     private String password;
     private String fullName;
-    public User()
-    {
-     System.out.println("********Default Constructor*******");
+    public User() {
+        super();
     }
-    public User(Integer id,String fullName,String username,String password)
-    {
-        this.id=id;
-        this.fullName=fullName;
-        this.username=username;
-        this.password=password;
-        System.out.println("********Parametrised Constructor*******");
+
+    public User(Integer id, String userName, String password, String fullName) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
     }
 
     public Integer getId() {
@@ -30,12 +28,12 @@ public class User
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
